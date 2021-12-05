@@ -17,6 +17,7 @@ public class Notification {
     private Long id;
     private String title;
     private String content;
+    private String idBoard;
     private String url;
     private boolean status;
     @ManyToMany

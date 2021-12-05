@@ -80,7 +80,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic().authenticationEntryPoint(restServicesEntryPoint());
         http.authorizeRequests()
                 .antMatchers("/", "/login", "/users/**").permitAll()
-                .anyRequest().authenticated()
+//                .anyRequest().authenticated()
                 .and().csrf().disable()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
