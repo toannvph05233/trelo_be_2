@@ -1,10 +1,12 @@
 package com.codegym.trello.service.workspaces;
 
 import com.codegym.trello.model.Workspace;
+import com.codegym.trello.model.Workspace_Members;
 import com.codegym.trello.repository.WorkspaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -43,6 +45,20 @@ public class WorkspaceServiceImpl implements WorkspaceService {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public List<Workspace_Members> findAllBoardMember(Long userId) {
+        return workspacesRepository.findAllBoardMember(userId);
+    }
+
+    @Override
+    public Workspace_Members findWorkspaceByBoardId(Long userId) {
+        return workspacesRepository.findWorkspaceByBoardId(userId);
+    }
+
+    public List<Workspace_Members> findAllBoardMember2(Long userId) {
+        return workspacesRepository.findAllBoardMember2(userId);
     }
 
 }

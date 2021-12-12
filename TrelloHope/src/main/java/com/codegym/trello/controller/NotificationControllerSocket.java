@@ -23,6 +23,6 @@ public class NotificationControllerSocket {
     @MessageMapping("/notification")
     public void create(@Payload Notification notification) {
         notificationService.save(notification);
-        simpMessagingTemplate.convertAndSend("/topic/public/"+ notification.getIdBoard(), notification.getContent());
+        simpMessagingTemplate.convertAndSend("/topic/public/"+ notification.getIdBoard(), notification);
     }
 }

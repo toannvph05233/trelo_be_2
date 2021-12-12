@@ -78,6 +78,11 @@ public class BoardController {
         return new ResponseEntity<>(workspaceService.isBoardInWorkspace(id), HttpStatus.OK);
     }
 
+    @GetMapping("/getIdWorkspace/{id}")
+    public ResponseEntity<Long> getIdWorkspaceByBoard(@PathVariable Long id) {
+        return new ResponseEntity<>(workspaceService.findWorkspaceByBoardId(id).getMemberId(), HttpStatus.OK);
+    }
+
     @PostMapping("/delete")
     public ResponseEntity<MemberWorkspace> deleteAllById(@RequestBody Iterable<Board> boards) {
         for (Board board : boards) {

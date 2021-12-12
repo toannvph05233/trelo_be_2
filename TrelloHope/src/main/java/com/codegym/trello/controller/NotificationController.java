@@ -26,10 +26,10 @@ public class NotificationController {
         return new ResponseEntity<>(notificationService.findByUserId(userId), HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity<Notification> create(@RequestBody Notification notification) {
-        return new ResponseEntity<>(notificationService.save(notification), HttpStatus.CREATED);
-    }
+//    @PostMapping
+//    public ResponseEntity<Notification> create(@RequestBody Notification notification) {
+//        return new ResponseEntity<>(notificationService.save(notification), HttpStatus.CREATED);
+//    }
 
     @PutMapping("/{id}")
     public ResponseEntity<Notification> update(@PathVariable Long id, @RequestBody Notification notification) {
